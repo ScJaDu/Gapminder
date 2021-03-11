@@ -1,0 +1,53 @@
+---
+title: "Gapminder"
+output: pdf_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+tinytex::install_tinytex()
+
+library(gapminder)
+library(tidyverse)
+```
+
+## Introduction
+
+In this document, we will be exploring the Gapminder dataset.
+
+## Observations of gapminder
+
+### 1. Countries where life expectancy less than 30
+
+```{r gapminder1, echo = FALSE}
+life_lt_30 <- gapminder %>% filter(lifeExp < 30)
+life_lt_30
+```
+
+
+Afghanistan and Rwanda are the only counties with life expectancy less than 30. Afganistan life expancy was *28.8* in 1952 and Rwanda was *23.6* years in 1992.
+
+### Countries with life expecancy greater than 81
+
+```{r gapminder2, echo = FALSE}
+life_gt_81 <- gapminder %>% filter(lifeExp > 81)
+life_gt_81
+```
+
+Five countries have life expectancy gt 81
+* Australia
+* Hong Kong
+* Iceland
+* Japan
+* Switzerland
+
+### Life expectancy by continent in 2007
+
+```{r gapminder3, echo = TRUE}
+cont_2007 <- gapminder %>% filter(year == 2007)
+cont_2007
+```
+
+
+
